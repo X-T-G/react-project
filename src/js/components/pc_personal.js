@@ -33,6 +33,7 @@ export default class Personal extends React.Component {
 		};
 	};
 	render() {
+		const { getFieldDecorator } = this.props.form;
 		return (
 			<header>
 				<Row>
@@ -76,10 +77,10 @@ export default class Personal extends React.Component {
 								<TabPane tab="登录" key="1">
 									<Form layout='horizontal' onSubmit={this.handleSubmit.bind(this)}>
 										<FormItem label="账户">
-											<Input placeholder="请输入您的账号" {...getFieldProps('r_userName')}/>
+											<Input placeholder="请输入您的账号" {...getFieldDecorator('r_userName')}/>
 										</FormItem>
 										<FormItem label="密码">
-											<Input placeholder="请输入您的密码" type="password" {...getFieldProps('r_passWord')}/>
+											<Input placeholder="请输入您的密码" type="password" {...getFieldDecorator('r_passWord')}/>
 										</FormItem>
 										<Button type="primary" htmlType="submit">登录</Button>
 									</Form>
@@ -87,13 +88,13 @@ export default class Personal extends React.Component {
 								<TabPane tab="注册" key="2">
 									<Form layout='horizontal' onSubmit={this.handleSubmit.bind(this)}>
 										<FormItem label="账户">
-											<Input placeholder="请输入您的账号" {...getFieldProps('r_userName')}/>
+											<Input placeholder="请输入您的账号" {...getFieldDecorator('r_userName')}/>
 										</FormItem>
 										<FormItem label="密码">
-											<Input placeholder="请输入您的密码" type="password" {...getFieldProps('r_passWord')}/>
+											<Input placeholder="请输入您的密码" type="password" {...getFieldDecorator('r_passWord')}/>
 										</FormItem>
 										<FormItem label="确认密码">
-											<Input placeholder="请再次输入您的密码" type="password" {...getFieldProps('r_confirmPassword')}/>
+											<Input placeholder="请再次输入您的密码" type="password" {...getFieldDecorator('r_confirmPassword')}/>
 										</FormItem>
 										<Button type="primary" htmlType="submit">注册</Button>
 									</Form>
